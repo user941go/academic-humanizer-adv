@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.svg" alt="Academic Humanizer: strip the tells of AI writing from papers and grant proposals, without flattening the precise, evidence-bound voice scholarship requires" width="860">
+<img src="assets/banner.svg" alt="Academic Humanizer: personalized editing for AI-assisted academic drafts, keeping your voice and every claim, number, and citation intact" width="860">
 
 [![license](https://img.shields.io/badge/license-MIT-2f8f57?style=flat-square)](LICENSE)
 &nbsp;![version](https://img.shields.io/badge/version-0.3.2-2f8f57?style=flat-square)
@@ -12,22 +12,31 @@
 ## Why we built this
 
 Some of us write a lot of papers and grant proposals, and our team started using AI to help with
-drafts. The catch is that AI writing is easy to spot: the "In recent years..." openers, the puffed-up
-phrasing, the very long sentences, the em-dashes. Reviewers pick up on it.
+drafts. The problem is that AI-assisted drafts come out generic and verbose, with "In recent years..."
+openers, inflated phrasing, and over-long sentences. They also drift from the author's own voice and
+lose the precision scholarship depends on.
 
-There are tools called "humanizers" that try to remove that AI flavor, but they're made for blogs and
-marketing. Run one on a paper or an NSF proposal and it cuts the precision along with the AI flavor. The
-careful wording academic writing depends on is the first thing to go.
+There are tools called "humanizers," but they are built for blogs and marketing. Run one on a paper or
+an NSF proposal and it flattens the precision along with everything else. The careful wording academic
+writing depends on is the first thing to go.
 
-So we put together our own for the group. To get the rules, we had the AI compare its own drafts with
-our team's accepted papers and funded proposals, and we went through the differences by hand. It's
-nothing fancy, and it isn't about gaming review or adding fake novelty. We just wanted AI-polished
-drafts to still read like a person wrote them, with the numbers, citations, and claims left alone.
+So we put together our own. To calibrate it, we had the AI compare its own drafts with our team's
+accepted papers and funded proposals, and we went through the differences by hand. It is nothing fancy,
+and it is not about gaming review, defeating detectors, or adding fake novelty. We wanted AI-assisted
+drafts to read clearly and in the author's own voice, with the numbers, citations, and claims left
+exactly as written.
+
+## Ethics and disclosure
+
+This is an editing aid for clarity and voice, calibrated to an author's own prior accepted work. It does
+not generate findings, invent data, or change citations, and it is not designed to evade AI-use
+detection. Using it does not remove your obligation to disclose AI assistance: always follow the
+disclosure policy of the venue you submit to.
 
 ## See it work
 
 > [!CAUTION]
-> **Before** (AI-generated, every tell present):
+> **Before** (a generic AI draft):
 >
 > In recent years, continual learning has attracted increasing attention and achieved remarkable
 > success. However, existing methods still face crucial challenges. In this proposal, we propose a novel
@@ -35,7 +44,7 @@ drafts to still read like a person wrote them, with the numbers, citations, and 
 > for a transformative paradigm that will revolutionize the field.
 
 > [!TIP]
-> **After** (the AI tells are gone; the vision and ambition stay):
+> **After** (clear, in the author's voice, with claims tied to evidence):
 >
 > Continual learning matters, but today's methods stay empirical and their principles are unclear. That
 > limits reliability and progress. This proposal builds a principled framework on three fronts:
@@ -49,9 +58,7 @@ example, an NIH Specific Aims page, and a funded NSF CAREER summary.
 
 ## What it does
 
-- **Removes the usual AI tells:** "paves the way", "extensive experiments", "to the best of our
-  knowledge", "In recent years...", delve/underscore/tapestry, rule-of-three, very long sentences, and
-  em-dashes.
+- **Sharpens clarity and voice:** trims generic AI phrasing ("paves the way", "extensive experiments", "to the best of our knowledge", "In recent years...", delve/underscore/tapestry, rule-of-three, very long sentences, em-dashes) and brings the draft closer to the author's own style.
 - **Keeps claims tied to evidence:** no verb stronger than the data (`prove` → `show empirically`), and
   vague magnitudes become attributed ranges.
 - **Leaves real scholarship alone:** evidence-tied hedging, passive voice where it fits, `we`,
@@ -75,6 +82,12 @@ It is a plain `SKILL.md` plus examples, so it also runs as a skill or system pro
 [paste a section, or point at main.tex]
 # optionally: "match my voice from prior_paper.pdf; target venue: ICLR"
 ```
+
+## Make it yours
+
+The rules here reflect one group's voice. Fork the repo and adapt them to your own: point it at a few of
+your past papers, keep the checks that fit your field, and adjust the rest. It is meant to be
+personalized, not a one-size-fits-all filter.
 
 ## How it works
 
@@ -100,8 +113,8 @@ Layer 6 distills the *stable* structure of NSF and NIH proposals. For current, b
   statistics/methodology research papers (idea → validated, revised manuscript). A complementary,
   broader-scope project that informed the claim-evidence and numerical-precision emphasis here.
 
-This skill is the narrower piece: a single-purpose **editing pass** that de-AI-ifies existing academic
-prose and matches claims to evidence while preserving scholarly voice.
+This skill is the narrower piece: a single-purpose **editing pass** that sharpens clarity and matches
+claims to evidence while preserving the author's scholarly voice.
 
 ## License
 

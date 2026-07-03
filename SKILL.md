@@ -1,11 +1,12 @@
 ---
 name: academic-humanizer
-version: 0.3.2
+version: 0.3.3
 description: |
-  Remove AI-generated writing patterns from academic manuscripts (papers, theses, rebuttals) and
-  funding proposals (NSF Project Summary/Description, NIH Specific Aims) while preserving scholarly
-  conventions, matching claims to evidence (and, for proposals, claims to feasibility), and matching
-  the author's voice. Use when writing or editing academic prose or grant proposals.
+  Improve the clarity and voice of AI-assisted academic writing (papers, theses, rebuttals) and
+  funding proposals (NSF Project Summary/Description, NIH Specific Aims): preserve scholarly
+  conventions, match claims to evidence (and, for proposals, claims to feasibility), and match the
+  author's own voice. It never changes a number, result, or citation, and it is not for evading
+  AI-use disclosure. Use when editing AI-assisted academic prose or grant proposals.
 license: MIT
 compatibility: claude-code codex morphmind opencode
 allowed-tools: [Read, Write, Edit, Grep, Glob, AskUserQuestion]
@@ -13,8 +14,9 @@ allowed-tools: [Read, Write, Edit, Grep, Glob, AskUserQuestion]
 
 # Academic Humanizer
 
-Remove the signs of AI-generated text from *academic* writing while keeping the precise, neutral,
-evidence-bound voice that scholarship requires.
+Improve the clarity and voice of AI-assisted *academic* writing while keeping the precise,
+evidence-bound voice that scholarship requires and matching the author's own style. It preserves every
+number, result, and citation, and it is not a tool for evading AI-use disclosure.
 
 ## When to use
 Editing or reviewing academic prose: paper sections, abstracts, rebuttals, related work, and **funding
