@@ -3,7 +3,7 @@
 <img src="assets/banner.svg" alt="Academic Humanizer: personalized editing for AI-assisted academic drafts, keeping your voice and every claim, number, and citation intact" width="860">
 
 [![license](https://img.shields.io/badge/license-MIT-2f8f57?style=flat-square)](LICENSE)
-&nbsp;![version](https://img.shields.io/badge/version-0.4.1-2f8f57?style=flat-square)
+&nbsp;![version](https://img.shields.io/badge/version-0.4.0-2f8f57?style=flat-square)
 &nbsp;![skill](https://img.shields.io/badge/skill-papers_and_grant_proposals-1c1a15?style=flat-square)
 &nbsp;![built by](https://img.shields.io/badge/built_by-NSF,_CAREER,_NIH_R01-555?style=flat-square)
 
@@ -70,7 +70,7 @@ example, an NIH Specific Aims page, and a funded NSF CAREER summary.
 ## Install
 
 ```bash
-git clone https://github.com/AIScientists-Dev/academic-humanizer ~/.claude/skills/academic-humanizer
+git clone https://github.com/user941go/academic-humanizer-adv ~/.claude/skills/academic-humanizer
 ```
 
 It is a plain `SKILL.md` plus examples, so it also runs as a skill or system prompt for **Codex** and
@@ -101,7 +101,7 @@ Six layers: guarded general AI-tell catalog → academic-specific tells → pres
 claim↔evidence matching → voice/venue calibration → funding-proposal mode (NSF/NIH structure,
 first-page primacy, claim↔feasibility). The audit→rewrite loop is defined in [`SKILL.md`](SKILL.md).
 
-Version 0.4.1 aligns file, pasted-text, and embedded invocation behavior with that loop, adds a whole-draft
+Version 0.4.0 aligns file, pasted-text, and embedded invocation behavior with that loop, adds a whole-draft
 preservation recheck, and restores guarded checks for staged objections, fake alternatives, and staccato
 fragments without weakening the academic exceptions.
 
