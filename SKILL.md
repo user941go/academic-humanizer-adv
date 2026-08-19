@@ -1,6 +1,6 @@
 ---
 name: academic-humanizer
-version: 0.4.0
+version: 0.4.1
 description: |
   Improve the clarity and voice of AI-assisted academic writing (papers, theses, rebuttals) and
   funding proposals (NSF Project Summary/Description, NIH Specific Aims): preserve scholarly
@@ -49,6 +49,11 @@ and its evidence. Voice samples are style references only, never content or evid
 - **Invariant check:** check preservation of claims, numbers, citations, structure, and cross-references
   without making stylistic edits.
 
+For pasted text, return the revised text and report. When the user names a file, edit only its prose in
+place; preserve frontmatter, code, data, equations, link targets, and other non-prose content, then return
+only the report. When another task invokes this skill for embedded prose, return only the revised prose
+unless that task requests a report.
+
 ## Process
 1. **Read** the manuscript and any author writing sample; note the document type (paper vs. funding
    proposal) and the target venue or funding agency. For proposals, also apply Layer 6 and preserve
@@ -58,7 +63,10 @@ and its evidence. Voice samples are style references only, never content or evid
 3. **Rewrite**: preserve information and scientific structure; remove only diagnosed tells, match
    over-claims to the evidence already supplied, and keep legitimate hedging. Keep paragraph boundaries
    unless changing one clearly improves comprehension without moving or merging claims.
-4. **Report**: cleaned text plus a short change log (patterns removed, claims softened or given evidence
+4. **Recheck the whole draft**: read for rhythm rather than patching isolated phrases. Ask what still
+   sounds formulaic and whether any information, uncertainty, perspective, or evidence association changed.
+   Treat every unsupported addition or lost item as an error and revise again before returning the text.
+5. **Report**: cleaned text plus a short change log (patterns removed, claims softened or given evidence
    pointers requested, and voice notes). Confirm the preservation contract explicitly.
 
 ---
@@ -72,7 +80,9 @@ tapestry, testament, landscape (abstract), pivotal, showcase, foster, leverage (
 seamless*); copula avoidance ("serves as" -> "is"); negative parallelisms ("not just X, but Y");
 rule-of-three padding; elegant variation (cycling synonyms for one referent); filler
 ("it is worth noting that", "in order to"); **overlong or clause-stacked sentences (review them; see 2.12)**;
-and distracting punctuation used in place of clear syntax. Do not enforce a blanket punctuation rule:
+false ranges; headings immediately restated by their first sentence; chatbot greetings, offers, or staged
+openers; unsupported knowledge-limit guesses; rows of dramatic fragments; generic sayings; and distracting
+punctuation used in place of clear syntax. Do not enforce a blanket punctuation rule:
 retain an em dash, semicolon, or parenthesis when it is clear, field-appropriate, or part of the author's
 voice; revise only genuine overuse or ambiguity.
 
@@ -177,7 +187,10 @@ and further progress.*
 ### 2.13 Shadowboxing and phantom alternatives
 Remove a contrast such as *not X but Y* only when X is an invented position that the text and supplied
 sources do not establish. Preserve evidence-bound contrasts between hypotheses, mechanisms, methods, or
-published positions. If uncertain, flag the contrast instead of rewriting it.
+published positions. Apply the same test to staged objections (*some might argue*, *to be clear*) and
+discarded options (*a tempting approach would be*): remove them only when they add no sourced position,
+real design choice, constraint, or other information. Several unrelated rejections are a stronger signal
+than one developed alternative. If uncertain, flag the passage instead of rewriting it.
 
 ### 2.14 Current-state prose
 In a manuscript, replace irrelevant narration about drafting or revision with the current state. Preserve
