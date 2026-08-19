@@ -2,18 +2,20 @@
 
 **Before (AI tells + over-claim):**
 > In recent years, graph representation learning has attracted increasing attention. In this paper, we
-> propose a novel method and demonstrate through extensive experiments that it significantly outperforms
-> existing approaches, paving the way for a new paradigm. To the best of our knowledge, this is the first
-> work to delve into this crucial problem.
+> note that existing methods for imbalanced node classification reweight the loss but ignore label noise,
+> and propose a noise-aware loss-reweighting term. On three citation benchmarks, it improves minority-class
+> F1 by 3-6 points over focal loss while leaving majority-class accuracy within 1 point. These extensive
+> experiments demonstrate that it significantly outperforms existing approaches, paving the way for a new
+> paradigm.
 
 **After (academic-humanized):**
 > Existing graph methods for imbalanced node classification reweight the loss but ignore label noise. We
 > add a noise-aware reweighting term and evaluate it on three citation benchmarks, where it improves
 > minority-class F1 by 3-6 points over focal loss while leaving majority-class accuracy within 1 point.
 
-What changed: removed the formulaic opener, "novel", "extensive", "significantly" (unquantified),
-"paving the way", and "to the best of our knowledge"; downgraded "demonstrate" to "evaluate"; attached
-a range and the comparator; kept the precise factual claims.
+What changed: removed the formulaic opener, "novel", "extensive", and "paving the way"; replaced the
+over-claim with the evaluation wording already supported by the input; retained every supplied dataset
+count, metric, range, comparator, and result. No evidence was added.
 
 ---
 
@@ -21,7 +23,14 @@ a range and the comparator; kept the precise factual claims.
 
 Proposals are scored from the first page, and the register differs from a paper: vision and
 feasibility are the product, so ambition is *kept* and matched to evidence rather than trimmed. This
-constructed example shows the opening move of an NIH Specific Aims page.
+constructed example shows the opening move of an NIH Specific Aims page. For this demonstration, assume
+the applicant supplied the following facts: sepsis is treatable when caught early; bedside scores fire too
+late and too often; the target is an early-warning model using continuous vital signs and routine labs;
+preliminary single-site results in Fig. 1 show detection hours earlier without a higher false-alarm rate;
+the evaluation covers the detection-versus-false-alarm limit on retrospective ICU data, a model that
+approaches it, calibration by a proper scoring rule, patient subgroups, and transfer to a prospectively
+held-out hospital; two partner-hospital letters are enclosed; and the three aims are independently
+valuable.
 
 **Before (vague importance, method-as-aim, dominoed, no feasibility):**
 > Early detection of sepsis is a very important and timely problem with many applications. In this
@@ -49,7 +58,8 @@ method-as-aims into outcome-framed aims and removed the Aim-3-depends-on-1-and-2
 named a concrete rigor anchor (a proper scoring rule for calibration); replaced "groundbreaking … large
 impact" with a concrete payoff and feasibility evidence (preliminary figure, partner letters). The
 ambition stayed, and it is now backed. *(This example is generic; in real use, cite only the PI's own
-record, and never invent preliminary data, funding, or letters.)*
+record, and never invent preliminary data, funding, or letters. If the facts listed above had not been
+supplied, the correct output would flag the gaps or ask the applicant, not add them.)*
 
 ---
 
@@ -58,7 +68,10 @@ record, and never invent preliminary data, funding, or letters.)*
 Here the **"after" is adapted from a real, funded NSF CAREER Project Summary** (used with permission);
 the "before" is a synthetic AI-generated draft of the same idea. It shows the proposal register at work:
 the long-term vision and the three-layer ambition are *kept* (they belong in a proposal), while the AI
-tells are stripped and the gap and payoff are made concrete.
+tells are stripped and the gap and payoff are made concrete. The supplied source establishes all content
+retained in the after text: the empirical-methods gap and its consequences; the three framework layers;
+autonomous-driving and cellular-management demonstrations; scalable-package release; and the integrated
+education plan.
 
 **Before (AI-generated; vision drowned in tells):**
 > In recent years, artificial intelligence has attracted increasing attention and achieved remarkable

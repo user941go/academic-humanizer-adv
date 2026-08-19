@@ -3,7 +3,7 @@
 <img src="assets/banner.svg" alt="Academic Humanizer: personalized editing for AI-assisted academic drafts, keeping your voice and every claim, number, and citation intact" width="860">
 
 [![license](https://img.shields.io/badge/license-MIT-2f8f57?style=flat-square)](LICENSE)
-&nbsp;![version](https://img.shields.io/badge/version-0.3.2-2f8f57?style=flat-square)
+&nbsp;![version](https://img.shields.io/badge/version-0.4.0-2f8f57?style=flat-square)
 &nbsp;![skill](https://img.shields.io/badge/skill-papers_and_grant_proposals-1c1a15?style=flat-square)
 &nbsp;![built by](https://img.shields.io/badge/built_by-NSF,_CAREER,_NIH_R01-555?style=flat-square)
 
@@ -38,18 +38,17 @@ disclosure policy of the venue you submit to.
 > [!CAUTION]
 > **Before** (a generic AI draft):
 >
-> In recent years, continual learning has attracted increasing attention and achieved remarkable
-> success. However, existing methods still face crucial challenges. In this proposal, we propose a novel
-> framework that leverages cutting-edge techniques to delve into these intricate problems, paving the way
-> for a transformative paradigm that will revolutionize the field.
+> In recent years, continual learning has attracted increasing attention. Existing methods remain
+> empirical, and their unclear principles limit reliability and progress. In this proposal, we propose a
+> novel framework spanning adaptation, soft supervision, and cross-domain knowledge. We will evaluate it
+> in autonomous driving and network management, paving the way for a transformative paradigm.
 
 > [!TIP]
 > **After** (clear, in the author's voice, with claims tied to evidence):
 >
-> Continual learning matters, but today's methods stay empirical and their principles are unclear. That
-> limits reliability and progress. This proposal builds a principled framework on three fronts:
-> adaptation, soft supervision, and cross-domain knowledge. We demonstrate it on autonomous driving and
-> network management.
+> Existing continual-learning methods remain empirical, and their unclear principles limit reliability
+> and progress. This proposal develops a framework spanning adaptation, soft supervision, and cross-domain
+> knowledge and evaluates it in autonomous driving and network management.
 
 **More before/after passes** are in [`examples/before-after.md`](examples/before-after.md): a general
 example, an NIH Specific Aims page, and a funded NSF CAREER summary.
@@ -58,11 +57,13 @@ example, an NIH Specific Aims page, and a funded NSF CAREER summary.
 
 ## What it does
 
-- **Sharpens clarity and voice:** trims generic AI phrasing ("paves the way", "extensive experiments", "to the best of our knowledge", "In recent years...", delve/underscore/tapestry, rule-of-three, very long sentences, em-dashes) and brings the draft closer to the author's own style.
-- **Keeps claims tied to evidence:** no verb stronger than the data (`prove` → `show empirically`), and
-  vague magnitudes become attributed ranges.
-- **Leaves real scholarship alone:** evidence-tied hedging, passive voice where it fits, `we`,
-  definitions, symbols, and every citation. It doesn't change a number or a reference.
+- **Sharpens clarity and voice:** trims generic AI phrasing, redundant hedging, unsupported rhetorical
+  contrasts, repeated openings, and unclear or choppy sentence structure while retaining legitimate
+  scientific usage and the author's punctuation and perspective.
+- **Keeps claims tied to evidence:** no verb stronger than the supplied evidence. Missing support is
+  flagged, never replaced with an invented number, statistic, citation, result, or evidence pointer.
+- **Leaves real scholarship alone:** claims, uncertainty, perspective, terminology, numbers, statistics,
+  units, equations, citations, headings, tables, figures, and cross-references stay intact.
 - **Has a separate mode for grant proposals (NSF, NIH):** it keeps the vision a paper would trim, and
   spends most of the effort on the first pages, since that's what reviewers score.
 
@@ -83,6 +84,11 @@ It is a plain `SKILL.md` plus examples, so it also runs as a skill or system pro
 # optionally: "match my voice from prior_paper.pdf; target venue: ICLR"
 ```
 
+Ask for **audit only**, a **conservative rewrite** (default), a **voice-matched rewrite**, or an
+**invariant check**. For voice matching, an explicitly named file takes precedence; otherwise the skill
+uses suitable files in `voice_sources/`. Voice samples influence style only, never content, evidence,
+citations, results, arguments, or distinctive wording.
+
 ## Make it yours
 
 The rules here reflect one group's voice. Fork the repo and adapt them to your own: point it at a few of
@@ -91,7 +97,7 @@ personalized, not a one-size-fits-all filter.
 
 ## How it works
 
-Six layers: general AI-tell catalog → academic-specific tells → preserve scholarly conventions →
+Six layers: guarded general AI-tell catalog → academic-specific tells → preserve scholarly conventions →
 claim↔evidence matching → voice/venue calibration → funding-proposal mode (NSF/NIH structure,
 first-page primacy, claim↔feasibility). The audit→rewrite loop is defined in [`SKILL.md`](SKILL.md).
 
