@@ -1,6 +1,6 @@
 ---
 name: academic-humanizer
-version: 0.4.1
+version: 0.4.0
 description: |
   Improve the clarity and voice of AI-assisted academic writing (papers, theses, rebuttals) and
   funding proposals (NSF Project Summary/Description, NIH Specific Aims): preserve scholarly
