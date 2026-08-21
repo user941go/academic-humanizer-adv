@@ -4,6 +4,10 @@ Place any user-selected papers or writing samples for voice matching in this dir
 
 When a request explicitly names a file, use that file. Otherwise, when voice matching is requested, use the suitable files in this directory.
 
+For cross-sample validation, place two or more independent samples here and leave them as separate files.
+The skill analyzes each selected file separately before comparing recurring and context-dependent patterns.
+Patterns supported by only one source remain provisional and do not become general voice rules.
+
 Infer only style features such as sentence rhythm, paragraph structure, transitions, punctuation, formality, and hedging. Never copy distinctive wording or import facts, claims, results, citations, references, or structure-specific content from a voice source.
 
 ## Examples

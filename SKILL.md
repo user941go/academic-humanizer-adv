@@ -55,14 +55,15 @@ only the report. When another task invokes this skill for embedded prose, return
 unless that task requests a report.
 
 ## Process
-1. **Read** the manuscript and any author writing sample; note the document type (paper vs. funding
-   proposal) and the target venue or funding agency. For proposals, also apply Layer 6 and preserve
-   appropriate vision.
+1. **Read** the manuscript and every selected voice sample; note the document type (paper vs. funding
+   proposal) and the target venue or funding agency. Before rewriting, analyze the samples separately and
+   cross-compare them using Layer 5. For proposals, also apply Layer 6 and preserve appropriate vision.
 2. **Audit** (do not edit yet): list each detected pattern with its location and proposed fix, and each
    empirical claim's evidence status.
 3. **Rewrite**: preserve information and scientific structure; remove only diagnosed tells, match
-   over-claims to the evidence already supplied, and keep legitimate hedging. Keep paragraph boundaries
-   unless changing one clearly improves comprehension without moving or merging claims.
+   over-claims to the evidence already supplied, and keep legitimate hedging. Local sentence and paragraph
+   rewriting is allowed when it improves comprehension without changing scientific function, claim order,
+   evidence mapping, citations, numbers, headings, tables, figures, or cross-references.
 4. **Recheck the whole draft**: read for rhythm rather than patching isolated phrases. Ask what still
    sounds formulaic and whether any information, uncertainty, perspective, or evidence association changed.
    Treat every unsupported addition or lost item as an error and revise again before returning the text.
@@ -245,14 +246,60 @@ and (b) does the verb match the strength of that evidence?
 ---
 
 ## Layer 5: Voice and venue matching
-Use the existing read-and-note process; do not create profiles or a separate voice subsystem. If the
-request names one or more samples, use only those. Otherwise, when voice matching is requested, use the
-suitable compatible files in `voice_sources/`. Infer only rhythm, sentence and paragraph structure,
-transitions, punctuation, formality, and the level and placement of hedging. Never import distinctive
-wording, content, arguments, facts, claims, mechanisms, results, citations, references, or the source's
-document-specific structure. Match the requested venue and language variety; for British-English
-scientific writing, retain British spelling unless a venue or the author's sample requires otherwise.
-Absent a sample, default to clean, precise, venue-appropriate prose, not a casual or opinionated voice.
+Keep voice analysis inside the existing rewrite workflow; do not create profiles or a separate voice
+subsystem. If the request names one or more samples, use only those. Otherwise, when voice matching is
+requested, use every suitable compatible file in `voice_sources/`. Analyze each selected sample separately
+before comparing them; do not blend the files into one generic summary.
+
+### 5.1 Evidence-backed analysis
+For each sample, record candidate patterns and a locatable passage that supports each pattern across five
+dimensions:
+
+1. **Argument organization:** paragraph entry, progression, and movement between abstraction and evidence.
+2. **Sentence architecture:** rhythm, clause structure, verb and nominalization behavior, and punctuation.
+3. **Reader stance:** assumed expertise, formality, directness, and author-reader positioning.
+4. **Scholarly domain stance:** handling of terminology, definitions, explanatory depth, and qualification.
+5. **Rhetorical mechanics:** transitions, emphasis, parallelism, paragraph endings, and placement of hedging.
+
+Infer only transferable style processes. Never import distinctive wording, document-specific organization,
+content, arguments, facts, claims, mechanisms, results, citations, references, or evidence from a voice
+sample. A pattern without a locatable supporting passage is not a voice finding. Before accepting a pattern,
+check whether an alternative explanation (section function, venue convention, or subject matter) better
+accounts for it.
+
+Cross-compare candidate patterns and classify them before drafting:
+
+- **Strong:** recurs in independent samples and more than one relevant context without material
+  counterevidence. Use as a default process gate.
+- **Contextual:** recurs, but only for a particular document, chapter, or section type, audience, or purpose.
+  Use it as a gate only when that condition is consistently supported and matches the target context.
+- **Provisional:** occurs in one source or one independent passage. Report it as limited evidence; do not
+  turn it into a default gate.
+- **Generic/excluded:** matches ordinary academic or model-default prose and adds no useful voice signal.
+  Exclude it rather than padding the analysis.
+
+Multiple passages in one document provide within-sample support, not independent cross-sample validation.
+When samples conflict, first test for contextual variation; otherwise lower confidence and omit the gate.
+With only one usable source, proceed conservatively but keep every inferred pattern provisional.
+
+### 5.2 Convert findings into process gates
+Convert only strong and applicable contextual findings into instructions that govern how prose is generated,
+not labels such as "formal", "information-dense", or "varied rhythm." Each gate must (1) state a concrete
+step to take before or while drafting, (2) cite its supporting samples in the internal analysis, and (3)
+remain usable after all sample-specific subject matter is removed. For example, replace "uses direct topic
+sentences" with "identify the paragraph's supported point first, state it before background, then attach the
+existing evidence and qualification in their original relationship."
+
+Apply the resulting gates during the conservative rewrite to sentence architecture, paragraph entry and
+flow, reader stance, domain handling, transitions, emphasis, punctuation, and hedging. Gates shape expression
+only. The preservation contract, claim-evidence discipline, scientific false-positive safeguards, target
+venue, and the target manuscript's required structure always take precedence. A gate must never strengthen
+or weaken a claim, relocate evidence, prescribe grammatical person, or add, remove, or imitate information.
+
+Match the requested venue and language variety; for British-English scientific writing, retain British
+spelling unless a venue or the author's samples require otherwise. Absent a usable sample or confirmed gate,
+default to clean, precise, venue-appropriate prose, not a casual or opinionated voice. In the change report,
+summarize the applied gates and identify provisional patterns that were deliberately not applied.
 
 ## Layer 6: Funding-proposal mode (NSF, NIH)
 A proposal is not a paper. It is sold on **vision plus feasibility**, not on finished results, and
