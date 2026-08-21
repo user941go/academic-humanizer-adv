@@ -1,5 +1,26 @@
 # Before / after (academic register)
 
+## Voice-matched analysis before rewriting
+
+When voice matching uses multiple samples, the skill analyzes them separately rather than producing a
+collective label such as "formal with varied rhythm." A compact internal analysis might find that two
+independent papers support opening results paragraphs with the reported comparison before interpretation,
+while parenthetical qualifications occur in only one paper.
+
+- **Strong recurring pattern:** comparison precedes interpretation in both samples.
+- **Contextual pattern:** the same entry sequence recurs in results sections but not introductions; apply it
+  only to a matching results context.
+- **Provisional pattern:** parenthetical qualification appears in one sample only; do not generalize it.
+- **Generic/excluded pattern:** both samples use grammatical academic sentences; this adds no voice signal.
+- **Process gate:** before drafting a results paragraph, identify the comparison already supported by the
+  target text, state it first, and then give the target text's existing interpretation and qualification
+  without changing their evidential relationship.
+
+The gate changes only presentation. It cannot supply the comparison, interpretation, evidence, citations,
+or phrasing from either voice sample.
+
+---
+
 **Before (AI tells + over-claim):**
 > In recent years, graph representation learning has attracted increasing attention. In this paper, we
 > note that existing methods for imbalanced node classification reweight the loss but ignore label noise,

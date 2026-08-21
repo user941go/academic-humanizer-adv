@@ -89,6 +89,12 @@ Ask for **audit only**, a **conservative rewrite** (default), a **voice-matched 
 uses suitable files in `voice_sources/`. Voice samples influence style only, never content, evidence,
 citations, results, arguments, or distinctive wording.
 
+Place compatible papers or writing samples directly in `voice_sources/` (PDF, DOCX, TXT, or Markdown).
+Name particular files in the request to select only those files; if none are named, the skill compares all
+suitable files in that directory. It analyzes files separately, cross-validates recurring patterns, and
+turns only well-supported or consistently chapter/section-matched findings into drafting process gates.
+Single-source patterns remain provisional and are not applied as general voice rules.
+
 ## Make it yours
 
 The rules here reflect one group's voice. Fork the repo and adapt them to your own: point it at a few of
@@ -98,7 +104,7 @@ personalized, not a one-size-fits-all filter.
 ## How it works
 
 Six layers: guarded general AI-tell catalog → academic-specific tells → preserve scholarly conventions →
-claim↔evidence matching → voice/venue calibration → funding-proposal mode (NSF/NIH structure,
+claim↔evidence matching → evidence-backed voice/venue process gates → funding-proposal mode (NSF/NIH structure,
 first-page primacy, claim↔feasibility). The audit→rewrite loop is defined in [`SKILL.md`](SKILL.md).
 
 Version 0.4.0 aligns file, pasted-text, and embedded invocation behavior with that loop, adds a whole-draft
@@ -122,6 +128,9 @@ Layer 6 distills the *stable* structure of NSF and NIH proposals. For current, b
 - **[koaeraser/ARMS](https://github.com/koaeraser/ARMS)**. *Focus:* an autonomous pipeline for
   statistics/methodology research papers (idea → validated, revised manuscript). A complementary,
   broader-scope project that informed the claim-evidence and numerical-precision emphasis here.
+- **[WeMakeGood/extracting-voice-profiles](https://github.com/WeMakeGood/extracting-voice-profiles)**
+  (MIT). *Focus:* source-grounded, cross-sample voice analysis and conversion of supported observations
+  into generative process gates. This skill adapts that methodology to scientific and academic prose.
 
 This skill is the narrower piece: a single-purpose **editing pass** that sharpens clarity and matches
 claims to evidence while preserving the author's scholarly voice.
